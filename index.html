@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#eee5f8">
+<title>Mis XV años · Reyna</title>
+<style>
+:root{--lav:#eee5f8;--lilac:#cbb2e8;--deep:#684b83;--ink:#51445f;--cream:#fffaf5;--rose:#d8b5c9}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(145deg,#faf6ff,#f4eaf8 45%,#fff8f4);color:var(--ink);font-family:Georgia,'Times New Roman',serif;min-height:100vh}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.23;background-image:radial-gradient(#b59acb .8px,transparent .8px);background-size:18px 18px;z-index:-1}
+main{max-width:760px;margin:auto;padding:22px 15px 48px}.hero{text-align:center;min-height:88vh;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;overflow:hidden}
+.kicker{letter-spacing:.22em;text-transform:uppercase;font:11px Arial,sans-serif;color:#8b719e}.hero h1{font-size:clamp(38px,10vw,68px);font-weight:400;margin:12px 0 2px;color:var(--deep);font-style:italic}.hero .subtitle{font-size:18px;letter-spacing:.08em;margin:0 0 24px}
+.flower{position:absolute;font-size:clamp(28px,7vw,48px);opacity:.8;animation:float 5s ease-in-out infinite}.f1{top:7%;left:8%}.f2{top:18%;right:8%;animation-delay:-2s}.f3{bottom:13%;left:12%;animation-delay:-1s}.f4{bottom:8%;right:11%;animation-delay:-3s}
+.butterfly{position:absolute;color:#9c7cb9;font-size:26px;animation:fly 7s ease-in-out infinite}.b1{top:28%;left:8%}.b2{right:8%;bottom:29%;animation-delay:-3s}
+.envelope-wrap{width:min(82vw,330px);height:220px;position:relative;margin:12px auto 20px;perspective:900px;cursor:pointer;filter:drop-shadow(0 14px 16px #8b6aa522)}
+.envelope{position:absolute;inset:25px 0 0;background:#d7c3e8;border-radius:5px;overflow:visible}
+.envelope:before{content:"";position:absolute;inset:0;background:linear-gradient(145deg,#e9ddf3,#c7afe0);clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%);z-index:3}
+.flap{position:absolute;top:0;left:0;width:100%;height:125px;background:#bfa2d9;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform 1s ease;z-index:4;filter:drop-shadow(0 3px 2px #7d5c9a22)}
+.letter{position:absolute;left:8%;width:84%;height:155px;top:35px;background:#fffaf8;border:1px solid #e3d4eb;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:transform 1s ease;z-index:2}
+.letter strong{font-size:31px;font-style:italic;color:var(--deep);font-weight:400}.letter small{font:10px Arial,sans-serif;letter-spacing:.16em;margin-top:8px}
+.seal{position:absolute;z-index:5;top:93px;left:calc(50% - 22px);width:44px;height:44px;border-radius:50%;background:#f5eaf6;border:1px solid #b58acb;color:#916aa8;display:grid;place-items:center;font-size:22px;transition:opacity .4s}
+.open .flap{transform:rotateX(180deg);z-index:1}.open .letter{transform:translateY(-88px);z-index:5}.open .seal{opacity:0}
+.open-hint{font:12px Arial,sans-serif;letter-spacing:.08em;color:#8b719e;animation:pulse 1.8s infinite}
+section{background:#ffffffb8;border:1px solid #e3d5ee;border-radius:24px;padding:28px 22px;margin:20px 0;text-align:center;box-shadow:0 10px 35px #6b4c8610;backdrop-filter:blur(5px)}
+.hidden{display:none}.reveal{animation:appear .9s ease both}.eyebrow{font:10px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#997dae}.script{font-size:clamp(32px,8vw,48px);font-style:italic;font-weight:400;color:var(--deep);margin:8px 0}.intro{line-height:1.8;font-size:16px;max-width:520px;margin:12px auto}
+.rule{width:70px;height:1px;background:#c7abd9;margin:18px auto}.date{font-size:21px;color:var(--deep);letter-spacing:.06em}.time{font:12px Arial,sans-serif;letter-spacing:.16em;margin-top:8px}
+.btn{border:1px solid #b89bce;background:#795a93;color:#fffafc;padding:12px 19px;border-radius:30px;font:12px Arial,sans-serif;letter-spacing:.06em;text-decoration:none;display:inline-block;margin:7px;cursor:pointer;transition:transform .2s,background .2s}.btn:hover{transform:translateY(-2px);background:#684b83}.btn.secondary{background:#fffaff;color:#75578c}
+form{max-width:460px;margin:18px auto 0;text-align:left}label{display:block;font:12px Arial,sans-serif;letter-spacing:.04em;margin:14px 0 6px;color:#6d587c}input,select,textarea{width:100%;border:1px solid #dac9e7;background:#fffdfd;border-radius:12px;padding:12px;font:14px Arial,sans-serif;color:#51445f}textarea{resize:vertical;min-height:78px}input:focus,select:focus,textarea:focus{outline:2px solid #cdb5e2;outline-offset:1px}.note{font:11px/1.6 Arial,sans-serif;color:#8b7b96}.status{font:13px Arial,sans-serif;margin-top:14px;min-height:20px;color:#684b83}.music{display:flex;align-items:center;justify-content:center;gap:10px;font:12px Arial,sans-serif;margin-top:18px}.music button{border:1px solid #cbb2e8;background:#fffaff;color:#75578c;border-radius:30px;padding:9px 14px;cursor:pointer}
+footer{text-align:center;font-size:13px;color:#927ba3;padding:14px}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-12px) rotate(6deg)}}@keyframes fly{0%,100%{transform:translate(0,0) rotate(-8deg)}50%{transform:translate(14px,-18px) rotate(12deg)}}@keyframes pulse{0%,100%{opacity:.55}50%{opacity:1}}@keyframes appear{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:600px){section{padding:36px 34px}.hero{min-height:90vh}}
+</style>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <span class="flower f1">✿</span><span class="flower f2">❀</span><span class="flower f3">✾</span><span class="flower f4">✿</span>
+    <span class="butterfly b1">🦋</span><span class="butterfly b2">🦋</span>
+    <p class="kicker">Una noche de cuento de hadas</p>
+    <h1>Mis XV años</h1><p class="subtitle">de</p>
+    <h1 style="margin-top:-16px">Reyna</h1>
+    <div class="envelope-wrap" id="envelope" role="button" tabindex="0" aria-label="Abrir invitación">
+      <div class="envelope"><div class="letter"><strong>Reyna</strong><small>ESTÁS INVITADO/A</small></div><div class="flap"></div><div class="seal">✧</div></div>
+    </div>
+    <div class="open-hint" id="openHint">TOCA EL SOBRE PARA ABRIR LA INVITACIÓN</div>
+  </header>
+
+  <div id="details" class="hidden">
+    <section class="reveal">
+      <div class="eyebrow">Con mucha ilusión</div>
+      <h2 class="script">¡Te invito a celebrar!</h2>
+      <p class="intro">Hay momentos que se vuelven mágicos cuando los compartimos con las personas que queremos. Me encantaría que formaras parte de esta noche tan especial.</p>
+      <div class="rule"></div><div class="date">Sábado · 19 de diciembre de 2026</div><div class="time">4:00 P. M.</div>
+      <div class="music"><span>♫</span><span>Party O’Clock · NMIXX</span><button id="musicBtn" type="button">Reproducir música</button></div>
+      <div id="musicPlayer" class="hidden" style="margin-top:15px"><iframe width="100%" height="166" src="https://www.youtube-nocookie.com/embed/Rd2wppggYxo?start=0&rel=0" title="Party O’Clock de NMIXX" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border-radius:14px;max-width:420px"></iframe><p class="note">La música se inicia al tocar el botón; el navegador puede pedir permiso.</p></div>
+    </section>
+    <section class="reveal">
+      <div class="eyebrow">Te espero</div><h2 class="script">¿Dónde?</h2>
+      <p class="intro">Consulta la ubicación del evento en el mapa.</p>
+      <a class="btn" href="https://maps.app.goo.gl/A1sDjoczeSYtFMAV8?g_st=aw" target="_blank" rel="noopener">Ver ubicación en Google Maps ↗</a>
+    </section>
+    <section class="reveal" id="rsvp">
+      <div class="eyebrow">Ayúdame a preparar este día</div><h2 class="script">Confirma tu asistencia</h2>
+      <p class="intro">Por favor, completa el formulario para avisarme si podrás acompañarme.</p>
+      <form id="rsvpForm">
+        <label for="name">Tu nombre *</label><input id="name" name="name" required maxlength="100" autocomplete="name" placeholder="Nombre y apellido">
+        <label for="attendance">¿Podrás asistir? *</label><select id="attendance" name="attendance" required><option value="">Selecciona una opción</option><option value="Sí, asistiré">¡Sí, ahí estaré!</option><option value="No podré asistir">Lo siento, no podré asistir</option></select>
+        <label for="guests">Número de personas (contándote) *</label><select id="guests" name="guests" required><option value="">Selecciona</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        <label for="message">Mensaje para Reyna (opcional)</label><textarea id="message" name="message" maxlength="500" placeholder="Escribe un mensajito..."></textarea>
+        <button class="btn" type="submit" style="width:100%">Enviar confirmación ♡</button>
+        <p class="note">Tus respuestas se guardarán en una hoja de cálculo de Google cuando el formulario esté conectado al servicio de registro (instrucciones en LEEME.txt). No incluyas información privada en el mensaje.</p>
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+    <footer>Con cariño, Reyna ♡<br><span class="note">Una noche para recordar</span></footer>
+  </div>
+</main>
+<script>
+const envelope=document.getElementById('envelope'), details=document.getElementById('details'), hint=document.getElementById('openHint');
+function openInvitation(){envelope.classList.add('open');hint.textContent='¡LA MAGIA COMIENZA!';setTimeout(()=>{details.classList.remove('hidden');details.scrollIntoView({behavior:'smooth',block:'start'});},650)}
+envelope.addEventListener('click',openInvitation);envelope.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openInvitation()}});
+document.getElementById('musicBtn').addEventListener('click',()=>{const p=document.getElementById('musicPlayer');p.classList.remove('hidden');document.getElementById('musicBtn').textContent='Música disponible abajo';p.scrollIntoView({behavior:'smooth',block:'center'})});
+// Pega aquí la URL de implementación de Google Apps Script (ver LEEME.txt).
+const RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx888v7Y5mqh0yb_xZl2x8wDysNlYSETe0KUDLprCVbNnhWGURBVMoI0p7Awil_2yoykg/exec';
+document.getElementById('rsvpForm').addEventListener('submit',async e=>{
+ e.preventDefault();const status=document.getElementById('status'),form=e.currentTarget;
+ if(RSVP_ENDPOINT.startsWith('PEGA_AQUI')){status.textContent='Falta conectar el registro de respuestas. Sigue los pasos de LEEME.txt antes de publicar.';return}
+ const data=new URLSearchParams();for(const [k,v] of new FormData(form).entries())data.append(k,String(v));
+ const btn=form.querySelector('button[type="submit"]');btn.disabled=true;btn.textContent='Enviando…';status.textContent='Enviando tu respuesta…';
+ try{await fetch(RSVP_ENDPOINT,{method:'POST',mode:'no-cors',body:data});status.textContent='¡Gracias! Tu confirmación se envió. Si necesitas cambiarla, contacta a Reyna.';form.reset();}
+ catch(err){status.textContent='No se pudo enviar. Revisa tu conexión e inténtalo de nuevo.';}
+ finally{btn.disabled=false;btn.textContent='Enviar confirmación ♡'}
+});
+</script>
+</body>
+</html>
