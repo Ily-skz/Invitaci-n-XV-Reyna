@@ -82,7 +82,7 @@ function openInvitation(){envelope.classList.add('open');hint.textContent='¡LA 
 envelope.addEventListener('click',openInvitation);envelope.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openInvitation()}});
 document.getElementById('musicBtn').addEventListener('click',()=>{const p=document.getElementById('musicPlayer');p.classList.remove('hidden');document.getElementById('musicBtn').textContent='Música disponible abajo';p.scrollIntoView({behavior:'smooth',block:'center'})});
 // Pega aquí la URL de implementación de Google Apps Script (ver LEEME.txt).
-const RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx888v7Y5mqh0yb_xZl2x8wDysNlYSETe0KUDLprCVbNnhWGURBVMoI0p7Awil_2yoykg/exec';
+const RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyxq1dt6LwqE72-1_E-HX6JP815URc343YqKdqNbjMBeJtOzlJ9jTIRZ3MVupbIdAznGA/exec';
 document.getElementById('rsvpForm').addEventListener('submit',async e=>{
  e.preventDefault();const status=document.getElementById('status'),form=e.currentTarget;
  if(RSVP_ENDPOINT.startsWith('PEGA_AQUI')){status.textContent='Falta conectar el registro de respuestas. Sigue los pasos de LEEME.txt antes de publicar.';return}
